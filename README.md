@@ -11,82 +11,37 @@ Market: SF
 <!-- framing the "why" in big-picture/real world examples -->
 *This workshop is important because:*
 
-Objects are
+From [Eloquent JavasScript](http://eloquentjavascript.net/04_data.html):
+
+>Numbers, Booleans, and strings are the bricks that data structures are built from. But you can’t make much of a house out of a single brick. Objects allow us to group values—including other objects—together and thus build more complex structures.
+
+If we want to write code of any complexity, we are going to need to understand objects, how to create them, how to manipulate them, how to access data within them, and how to think about them.
 
 ### What are the objectives?
 <!-- specific/measurable goal for students to achieve -->
 *After this workshop, developers will be able to:*
 
-- Objective 1
-- Objective 2
-- Objective 3
+- describe objects as collections of key value pairs.
+- demonstrate the ability to access any attribute of an object in two ways - `.` syntax and `[]` syntax
+- Display the difference between properties (attributes) and methods. Call an object's methods. Recognize the widespread existance of objects throughout JavaScript syntax (`console.log()`, `$('div').text()`, `string.length()`)
+- recognize that an array is a special object with numerical keys.
+- find and display an example of JSON on the web
+
 
 ### Where should we be now?
 <!-- call out the skills that are prerequisites -->
 *Before this workshop, developers should already be able to:*
 
-- Skill 1
+- create and manipulate a JavaScript array.
 - Skill 2
 - Skill 3
 
-## Section Title
+### Review
 
-<!-- framing on *how* the workshop will be conducted ("pair programming"/"think pair share"/"I do, you do, we do"/etc) -->
->***Note:*** *This can be a pair programming activity or done independently.*
-
-#### Non-section heading
-
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum fugiat autem voluptate officia voluptatum tempore repudiandae illum libero. Dolor aliquam minima sit velit, quis quisquam delectus explicabo nam id facilis.
-
-<!-- File path -->
-**/directory/file-name.js**
-
-```js
-// code here
-```
-
-###Illustration
-<figure>
-  <img src="http://www.computerhope.com/jargon/d/dom1.jpg" alt="DOM Tree">
-  <br>
-  <figcaption>Descriptive caption</figcaption>
-</figure>
-
-###Check for Understanding
-
-<details>
-  <summary>Thought provoking question</summary>
-  <p>Mind-blowing explanation</p>
-</details>
-
-## Independent Practice
-Refine the skills covered in this workshop with this [lab](#)
-
-## Closing Thoughts
-- review objectives & hierarchy of importance
-- look ahead & link to future workshops
-- clarify expectations and what developers should know by now
-- reiterate “the why” with a perspective of your intentions
-- create an active recall
-- Check for understanding
-
-## Additional Resources
-- [External Resource](#)
-
-
-
-
-
-
-
-
-#Object Oriented Programming
-
-| Objectives |
-| :--- |
-| Build practical and useful objects using Javascript constructors |
-| Demonstrate a working knowledge of  object properties and methods  |
-| Convert previous projects to utilize Object Oriented Programming techniques |
+1. Handwrite the syntax for creating an array that contains the number 5, the string 'wdi rocks', and the boolean `true` *in that order*.
+2. Handwrite the syntax you'd use to access the string `wdi rocks` within that array.
+3. Handwrite the way that you'd add the string 'Monday!' to the end of the list.
+4. Handwrite the code you'd use to change the list value `true` to `false`.
 
 ## What is an Object?
 
@@ -99,23 +54,23 @@ var data = {
 	school: "General Assembly",
 	city: "San Francisco",
 	course: "Web Development Immersive",
-	course_id: "WDI28",
-	classrootm: "2",
+	course_id: "WDI31",
+	classroom: "4",
 	students: [{
 		id: 0,
-		last_name: "Beck",
-		first_name: "Adam",
-		github_username: "mradambeck"
+		last_name: "Baig",
+		first_name: "Abbas",
+		github_username: "abbasbaigali"
 	}, {
 		id: 1,
-		last_name: "Moses",
-		first_name: "Emily",
-		github_username: "eamoses"
+		last_name: "Bak",
+		first_name: "Sera",
+		github_username: "serabakpak"
 	}, {
 		id: 2,
-		last_name: "Coronado",
-		first_name: "Hector",
-		github_username: "hectorcoronado"
+		last_name: "Brown",
+		first_name: "Alicia",
+		github_username: "cabrown91"
 	}]
 }
 
@@ -173,6 +128,9 @@ var flower = {
 	smellsPretty : true
 };
 ```
+
+#### Note: Arrays are special objects! An array is an object with numerical keys.
+
 
  Now let me make you a flower using the preferred *Constructor* method:
 
@@ -333,6 +291,49 @@ var flower = {
 }
 ```
 
-Further Suggested Reading:
+
+
+## Section Title
+
+<!-- framing on *how* the workshop will be conducted ("pair programming"/"think pair share"/"I do, you do, we do"/etc) -->
+>***Note:*** *This can be a pair programming activity or done independently.*
+
+#### Non-section heading
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum fugiat autem voluptate officia voluptatum tempore repudiandae illum libero. Dolor aliquam minima sit velit, quis quisquam delectus explicabo nam id facilis.
+
+<!-- File path -->
+**/directory/file-name.js**
+
+```js
+// code here
+```
+
+###Illustration
+<figure>
+  <img src="http://www.computerhope.com/jargon/d/dom1.jpg" alt="DOM Tree">
+  <br>
+  <figcaption>Descriptive caption</figcaption>
+</figure>
+
+###Check for Understanding
+
+<details>
+  <summary>Thought provoking question</summary>
+  <p>Mind-blowing explanation</p>
+</details>
+
+## Independent Practice
+Refine the skills covered in this workshop with this [lab](#)
+
+## Closing Thoughts
+- review objectives & hierarchy of importance
+- look ahead & link to future workshops
+- clarify expectations and what developers should know by now
+- reiterate “the why” with a perspective of your intentions
+- create an active recall
+- Check for understanding
+
+## Additional Resources
 - [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript)
 - [Tutsplus](http://code.tutsplus.com/tutorials/the-basics-of-object-oriented-javascript--net-7670)
