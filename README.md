@@ -113,9 +113,19 @@ var car = {
 
 **Methods** are the functions that an object can perform! If we want our object to be able to do things, it will need **methods**.
 
+#### Methods Can Only Be Called With Dot Notation
+```javascript
+// methods can only be called with dot notation
+car.accelerate(); // car.currentSpeed is now 10
+car.accelerate(); // car.currentSpeed is now 20
+car.accelerate(); // car.currentSpeed is now 30
+car.brake(); // car.currentSpeed is now back to 20
+console.log(car.currentSpeed); // will print 20
+```
 
+## Objects are Everywhere!
 
-Objects are all over JavaScript syntax, which we'll see in a moment.
+Objects are all over JavaScript syntax. Look throughout the JavaScript code we've encountered so far, look for the dot notation. Find three examples of objects and the methods,  
 
 
 
