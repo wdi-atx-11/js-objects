@@ -11,7 +11,7 @@ Market: SF
 <!-- framing the "why" in big-picture/real world examples -->
 *This workshop is important because:*
 
-From [Eloquent JavasScript](http://eloquentjavascript.net/04_data.html):
+From [Eloquent JavaScript](http://eloquentjavascript.net/04_data.html):
 
 >Numbers, Booleans, and strings are the bricks that data structures are built from. But you can’t make much of a house out of a single brick. Objects allow us to group values—including other objects—together and thus build more complex structures.
 
@@ -23,8 +23,7 @@ If we want to write code of any complexity, we are going to need to understand o
 
 - describe objects as collections of key value pairs.
 - demonstrate the ability to access any attribute of an object in two ways - `.` syntax and `[]` syntax
-- Display the difference between properties (attributes) and methods. Call an object's methods. Recognize the widespread existance of objects throughout JavaScript syntax (`console.log()`, `$('div').text()`, `string.length()`)
-- recognize that an array is a special object with numerical keys.
+- Display the difference between properties (attributes) and methods. Call an object's methods. Recognize the widespread presence of objects throughout JavaScript syntax (`console.log()`, `$('div').text()`, `string.length`)
 - find and display an example of JSON on the web
 
 
@@ -45,9 +44,82 @@ If we want to write code of any complexity, we are going to need to understand o
 
 ## What is an Object?
 
-As of today, we have been writing our Javascript code using mainly functions, Strings, numbers, and Arrays.   This has allowed us to parse through data objects given to us, reach out and pull data from the internet, and display it all on a web page!  These are all great accomplishments, but like everything else in the world of programming, there is always a more efficient way of implementing what we have done.
+As of today, we have been writing our Javascript code using mainly functions, Strings, numbers, and Arrays. You've written functions that can print patterns of text, you've accessed the DOM with jQuery, and listened for events on the page. We haven't yet gathered a bunch of strings, numbers, arrays, and functions into a single collection of information. This is where objects come in. An object is **a collection of key-value pairs**. Below is an example of an object.
 
-Here's a truncated version of the cohort data we have been using.  Take some time to study the structure and the data types within the data object.
+``` javascript
+var car = {
+  wheels: 4,
+  topSpeed: 110,
+  currentSpeed: 0,
+  color: 'blue',
+  inWorkingOrder: true,
+  damage: ['chipped windshield','dented back left bumper', 'passenger window squeaks']
+}
+```
+
+Here, `wheels` is a **key** and `4` is a **value**. What are the other **key-value pairs**?
+
+Notice that **keys** are short, descriptive names just like variable names. key-value pairs are essentially just variable names and stored values. An object groups the information of many key-value pairs into a meaningful collection.
+
+Notice that in our example, **values** are numbers, booleans, strings, and an array. These are all **attributes** (aka **properties**) of the object. They are the information that describes this object.
+
+
+#### Accessing the Data in an Object
+
+#### Dot Notation
+```javascript
+// dot notation
+var color = car.color; // blue
+var wheelCount = car.wheels; // 4
+var operational = car.inWorkingOrder; //true
+```
+
+#### Bracket notation
+
+```javascript
+// bracket notation
+var color = car['color']; // blue
+var wheelCount = car['wheels']; // 4
+var operational = car['inWorkingOrder']; //true
+
+```
+
+## Methods
+
+An object can hold any data type - numbers, strings, booleans, arrays, functions, and even other objects.
+
+Here's a less boring version of the `car` object that includes some **methods**.
+
+``` javascript
+var car = {
+  wheels: 4,
+  topSpeed: 110,
+  currentSpeed: 0,
+  color: 'blue',
+  inWorkingOrder: true,
+  damage: ['chipped windshield','dented back left bumper', 'passenger window squeaks'],
+  accelerate: function(){
+    if(this.inWorkingOrder && this.currentSpeed < this.topSpeed){
+      this.currentSpeed += 10;
+    }
+  },
+  brake: function(){
+    if(this.currentSpeed > 0){
+      this.currentSpeed -= 10;
+    }
+  }
+}
+```
+
+**Methods** are the functions that an object can perform! If we want our object to be able to do things, it will need **methods**.
+
+
+
+Objects are all over JavaScript syntax, which we'll see in a moment.
+
+
+
+Here's a truncated version of our cohort data.  Take some time to study the structure and the data types within the data object. It's a bit more complex.
 
 ```javascript
 var data = {
@@ -74,11 +146,14 @@ var data = {
 	}]
 }
 
-
 ```
 
+What data type is the value associated with the `students` key in the `data` object?
+
+
+
 -  Based on our experience in class so far and your familiarity with the above object, consider the following as you read further:
-	- How many of the properties in `data` are Strings?
+  - How many of the properties in `data` are Strings?
  	- How many of the properties are Arrays?
  	- If there is an array, what data type(s) are the elements inside?
 
@@ -132,50 +207,23 @@ var flower = {
 #### Note: Arrays are special objects! An array is an object with numerical keys.
 
 
- Now let me make you a flower using the preferred *Constructor* method:
+The Literal definition of an object creates one single object called flower.  There are no other flowers, just that one single object we created. We can access the properties of an object in one of two ways:  
 
- ```javascript
- // Constructor Object Definition
- function Flower(){
- 	this.color = "red";
- 	this.petals = 32;
- 	this.smellsPretty= true;
- }
- ```
-
-The Literal definition of an object creates one single object called flower.  There are no other flowers, just that one single object we created.  The constructor method is actually a function that creates a unique object every time it is called.  Below we will create a new variable `rose` that will use the constructor method to create a new object.
-
+#### Dot Notation
 ```javascript
-var rose = new Flower();
+// dot notation
+var color = flower.color; // red
+var petalCount = flower.petals; // 32
+var smellsNice = flower.smellsPretty; //true
 ```
 
-Let us break down a couple concepts introduced with this new line of code:
-- The capitalization of `Flower` lets everyone know that `Flower` is an object constructor.  Calling `Flower()` will return a `Flower` object.
-- The `new`before our function call lets javascript know that we are creating a new object that will be independent of any other object.
-- We call the flower function, which creates an object with the three pre-defined properties already made.  Our object is ready to go!
-
-<img src = http://www.mzephotos.com/wallpapers/roses/red-rose-1024x768.jpg width = 75%>
-
-Accessing the properties of our new `rose` object is the same as accessing our properties from any other object: we use dot or bracket notation.
+#### Bracket notation
 
 ```javascript
-var color = rose.color; // red
-var petalCount = rose.petals; // 32
-var smellsNice = rose.smellsPretty; //true
-```
-
-If we wanted to create yet ANOTHER flower, all we have to do is call our function just like we did above.  This time, lets make an object called `lily`.
-
-```javascript
-var lily = new Flower();
-```
-
-We can access the properties of `lily` in the same manner as we did with `rose`.
-
-```javascript
-var color = lily.color; // red
-var petalCount = lily.petals; // 32
-var smellsNice = lily.smellsPretty; //true
+// bracket notation
+var color = flower['color']; // red
+var petalCount = flower['petals']; // 32
+var smellsNice = flower['smellsPretty']; //true
 ```
 
 ##Changing an Object's properties
