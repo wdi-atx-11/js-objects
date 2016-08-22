@@ -44,9 +44,12 @@ If we want to write code of any complexity, we are going to need to understand o
 
 ## What is an Object?
 
-As of today, we have been writing our Javascript code using mainly functions, Strings, numbers, and Arrays. You've written functions that can print patterns of text, you've accessed the DOM with jQuery, and listened for events on the page. We haven't yet gathered a bunch of strings, numbers, arrays, and functions into a single collection of information. This is where objects come in. An object is **a collection of key-value pairs**. Below is an example of an object.
+![image](https://cloud.githubusercontent.com/assets/6520345/17868768/15cd042c-6865-11e6-87d8-2ebbd26ffbf4.png)
+
+As of today, we have been writing our Javascript code using mainly functions, Strings, numbers, and Arrays. You've written functions that can print patterns of text, you've accessed the DOM with jQuery, and listened for events on the page. We haven't yet gathered a bunch of strings, numbers, arrays, and functions into a single collection of information. This is where objects come in. An object is **a collection of key-value pairs** that all have some sort of relationship and are connected logically to one another. Below is an example of an object.
 
 ``` javascript
+// Literal Object Definition
 var car = {
   wheels: 4,
   topSpeed: 110,
@@ -57,14 +60,19 @@ var car = {
 }
 ```
 
-Here, `wheels` is a **key** and `4` is a **value**. What are the other **key-value pairs**?
+
+In the line below, `wheels` is a **key** and `4` is its **value**. What are the other **key-value pairs**?
+
+```javascript
+wheels: 4;
+```
 
 Notice that **keys** are short, descriptive names just like variable names. key-value pairs are essentially just variable names and stored values. An object groups the information of many key-value pairs into a meaningful collection.
 
 Notice that in our example, **values** are numbers, booleans, strings, and an array. These are all **attributes** (aka **properties**) of the object. They are the information that describes this object.
 
 
-#### Accessing the Data in an Object
+### Accessing the Data in an Object
 
 #### Dot Notation
 ```javascript
@@ -82,7 +90,48 @@ var color = car['color']; // blue
 var wheelCount = car['wheels']; // 4
 var operational = car['inWorkingOrder']; //true
 
+// using bracket notation, you can lookup by variables
+var accessString = 'currentSpeed';
+var speed = car[accessString]; // speed will hold the value of car.currentSpeed
 ```
+
+### Other Ways to Create an object
+
+We can create the same car object by declaring an empty object and then filling it in with key-value pairs:
+
+``` javascript
+// dot notation
+var car = {};
+car.wheels = 4;
+car.topSpeed = 110;
+car.currentSpeed = 0;
+car.color = 'blue';
+car.inWorkingOrder = true;
+car.damage = ['chipped windshield','dented back left bumper', 'passenger window squeaks'];
+```
+
+``` javascript
+// bracket notation
+var car = {};
+car['wheels'] = 4;
+car['topSpeed'] = 110;
+car['currentSpeed'] = 0;
+car['color'] = 'blue';
+car['inWorkingOrder'] = true;
+car['damage'] = ['chipped windshield','dented back left bumper', 'passenger window squeaks'];
+```
+
+Soon we'll learn other ways to build objects using special functions, called **constructors**, that build objects from an existing template.
+
+## Changing an Object's properties
+I don't know about you, but I generally like my cars yellow. I would also prefer a car with a top speed greater than 110!  Can we change our `car` object to better reflect my preferences? You bet!
+
+``` javascript
+car.color = 'yellow';
+car.topSpeed = 210;
+```
+
+![image](https://cloud.githubusercontent.com/assets/6520345/17868818/46b3cce2-6865-11e6-8bb4-94ebc63ceddf.png)
 
 ## Methods
 
@@ -101,17 +150,22 @@ var car = {
   accelerate: function(){
     if(this.inWorkingOrder && this.currentSpeed < this.topSpeed){
       this.currentSpeed += 10;
+      return this.currentSpeed;
     }
   },
   brake: function(){
     if(this.currentSpeed > 0){
       this.currentSpeed -= 10;
+      return this.currentSpeed;
     }
   }
 }
 ```
 
 **Methods** are the functions that an object can perform! If we want our object to be able to do things, it will need **methods**.
+
+Methods can also access properties within the object with the `this` identifier rather than using dot or bracket notation.  Remember, `this` refers to the "container" in which the function is being executed. Previously, our only "container" was the `window` object. Now that we're putting methods inside of our own custom objects, `this` takes on the value of the object that surrounds it.
+
 
 #### Methods Can Only Be Called With Dot Notation
 ```javascript
@@ -123,13 +177,18 @@ car.brake(); // car.currentSpeed is now back to 20
 console.log(car.currentSpeed); // will print 20
 ```
 
+## Create Objects!
+
+Go to terminal, run `node` and generate a car object directly in the code. Include all of the properties that I have used above and add at least 5 attributes of your own. Write one method that is unique to your car object.
+
 ## Objects are Everywhere!
 
-Objects are all over JavaScript syntax. Look throughout the JavaScript code we've encountered so far, look for the dot notation. Find three examples of objects and the methods,  
+Objects are all over JavaScript syntax. Look throughout the JavaScript code we've encountered so far, look for the dot notation. Find three examples of objects in normal JavaScript syntax. Include your evidence for why your example is definitely an object.
 
 
+## Accessing Data from an Object
 
-Here's a truncated version of our cohort data.  Take some time to study the structure and the data types within the data object. It's a bit more complex.
+Below is a truncated version of our cohort data. The `data` object is a grouping of key -value pairs that describe our class.  Take some time to study the structure and the data types within the data object. It's a bit more complex.
 
 ```javascript
 var data = {
@@ -139,48 +198,54 @@ var data = {
 	course_id: "WDI31",
 	classroom: "4",
 	students: [{
-		id: 0,
-		last_name: "Baig",
-		first_name: "Abbas",
-		github_username: "abbasbaigali"
+		id: 124140,
+		lastName: "Baig",
+		firstName: "Abbas",
+		gitHubUsername: "abbasbaigali"
 	}, {
-		id: 1,
-		last_name: "Bak",
-		first_name: "Sera",
-		github_username: "serabakpak"
+		id: 421124,
+		lastName: "Bak",
+		firstName: "Sera",
+		gitHubUsername: "serabakpak"
 	}, {
-		id: 2,
-		last_name: "Brown",
-		first_name: "Alicia",
-		github_username: "cabrown91"
+		id: 824544,
+		lastName: "Brown",
+		firstName: "Alicia",
+		gitHubUsername: "cabrown91"
 	}]
 }
 
 ```
 
-What data type is the value associated with the `students` key in the `data` object?
 
+<details>
+  <summary>What data type is the value associated with the `students` key in the `data` object?</summary>
+  <p>
+  The `students` attribute is an array!
+  </p>
+</details>
 
+What data type are the elements within `students`?
 
--  Based on our experience in class so far and your familiarity with the above object, consider the following as you read further:
-  - How many of the properties in `data` are Strings?
- 	- How many of the properties are Arrays?
- 	- If there is an array, what data type(s) are the elements inside?
-
-The `data` object is a grouping of key & value pairs (known as properties) that describe our class.  
-
-```javascript
-school: "General Assembly"
-```
-In the line above, `school` is the **key** and `"General Assembly"` is the **value**.
+<details>
+  <summary>What data type are the elements within `students`?</summary>
+  <p>
+  The `students` array contains objects as its elements!
+  </p>
+</details>
 
 To access a property, we can use dot-notation or bracket-notation on the key to have the corresponding value returned.
 
- ```javascript
- var GA = data.school; //General Assembly
- ```
+How would you access the `students` attribute of the `data` object?
 
-`GA` has the value `General Assembly`.  
+<details>
+  <summary>How would you access the `students` attribute of the `data` object?</summary>
+  <p>
+  ```javascript
+  data.students
+  ```
+  </p>
+</details>
 
 To access an array within an object,  the method is similar to accessing any other property.  The property `students` is an array of Objects.  To access that array and assign it to a variable, we simply perform the following:
 
@@ -188,210 +253,66 @@ To access an array within an object,  the method is similar to accessing any oth
  var studentArray = data.students; //students
  ```
 The `data.students` array is now accessible by using `studentArray` instead.
-Declaring variables and defining them as portions of a larger object helps us create readable and followable code.  
-
-*We can assume that an Object is a collection of properties (key & value pairs) that all have some sort of relationship and are connected logically to one another.*  
-
-###Quick Challenge
-<!--- Make a copy of `data.js` and rename it to `enhancedData.js`-->
-- Make a copy of the cohort data
-- Add some more properties that logically fit into an object describing our class (address, floor number, and a list of instructors).
-- Try to access your new data properties from the console to make sure they work.
-
-If everything worked out, you should have a fully functioning data object, only now with even MORE properties with us to play with!  
 
 
-##Creating an object
-For relatively straightforward and small objects, it is perfectly fine to declare them as a variable and define them, as we did with the data about a cohort.  This is known as a *Literal* object definition.  
-Here. I'll make you a flower using the *Literal* method:
+<details>
+  <summary>How would you access Alicia's data from within the `data` object?</summary>
+  <p>
+  ```javascript
+    data.students[2]
+  ```
+  </p>
+</details>
 
-```javascript
-// Literal Object Definition
-var flower = {
-	color : "red",
-	petals : 32,
-	smellsPretty : true
-};
-```
+<details>
+  <summary>How would you access Sera's GitHub username?</summary>
+  <p>
+  ```javascript
+    data.students[1].gitHubUsername;
+  ```
+  </p>
+</details>
+
+
+<details>
+  <summary>How would you access Abbas's student id?</summary>
+  <p>
+  ```javascript
+    data.students[0].id;
+  ```
+  </p>
+</details>
+
+## JSON
+
+JSON stands for **JavaScript Object Notation**. It is a standard for communicating information across the internet. JSON is data formatted to look like JavaScript objects, with just a few small quirks. Most importantly, JSON stores all of the key names as strings. Here is an example of [some JSON on the web](https://api.spotify.com/v1/search?q=demon%20days&type=album).
+
+You can see that this is a HUGE object with tons of data. It is the result of searching Spotify's albums for the string "demon days".
+
+To make this all a bit less overwhelming, download the [JSONview Chrome plugin](https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc?hl=en), which will help you collapse and expand sections of the data as needed.
+
+![image](https://cloud.githubusercontent.com/assets/6520345/17868426/b8f5dc98-6863-11e6-989f-6b31d7a922d1.png)
+
+<details>
+  <summary>Challenge: Assuming the whole JSON is named `data`, access the URL of the first image from the first search result from this piece of JSON.</summary>
+  <p>
+  ```javascript
+    data.albums.items[0].images[0].url;
+  ```
+  </p>
+</details>
+
 
 #### Note: Arrays are special objects! An array is an object with numerical keys.
 
-
-The Literal definition of an object creates one single object called flower.  There are no other flowers, just that one single object we created. We can access the properties of an object in one of two ways:  
-
-#### Dot Notation
-```javascript
-// dot notation
-var color = flower.color; // red
-var petalCount = flower.petals; // 32
-var smellsNice = flower.smellsPretty; //true
-```
-
-#### Bracket notation
-
-```javascript
-// bracket notation
-var color = flower['color']; // red
-var petalCount = flower['petals']; // 32
-var smellsNice = flower['smellsPretty']; //true
-```
-
-##Changing an Object's properties
-I don't know about you, but I generally like my Lillies yellow. I have also never heard of a lily with 32 petals, holy smokes!  Can we change our `lily` object to better reflect my perfect lily? You bet!
-
-```javascript
-// Changing object property values
-lily.color = 'yellow';
-lily.petals = 6;
-```
-
-That's more like it!  To change the value of the lily object properties. we simply access them with dot or bracket notation.  We then follow with an equals and a new appropriate value.  Couldn't be easier!
-
-<img src = https://seniorhikerphotos.files.wordpress.com/2012/06/lilysarina12052301.jpg width = 75%>
-
-##Object Methods
-One of the most powerful features of Javascript Objects are Methods.  Methods are *"functions"* that are predefined and built into an object.  We all know and love array Methods like `forEach()`, `map()`, `filter()`, and `reduce()`; these are all Methods of the Array object.  We use arrays so much that Javascript automagically creates them from an Array constructor without us having to instantiate them with `new` like we did above with the flowers.  Thanks, Javascript!
-
-Lets make a simple method in the flower object that outputs to the console whenever we call it.
-
-
-```javascript
-function Flower(){
-    this.color = "red";
-    this.petals = 32;
-    this.smellsPretty= true;
-    // Demonstrates a simple method in an object
-    this.sniff = function() {
-        console.log("Sniff Sniff Sniff!");
-    };
-}
-```
-
-We now have a method inside our flower object called `sniff`.  When we call it, the console will display "Sniff Sniff Sniff!" as predicted.  
-
-Lets add another method that takes an argument and returns a response.
-
-```javascript
-function Flower(){
-    this.color = "red";
-    this.petals = 32;
-    this.smellsPretty= true;
-    // Demonstrates a simple method in an object
-    this.sniff = function() {
-        console.log("Sniff Sniff Sniff!");
-    };
-    // Demonstrates use of arguments with methods
-    this.smellsGood = function(answer) {
-    	if (answer) {
-    		return 'This flower smells amazing!';
-    	} else {
-    		return 'What a noxious weed!';
-    	}
-    };
-}
-```
-Methods can also access properties within the object with the `this` identifier rather than using dot or bracket notation.  Check out the method `describe()` below for an example.
-
-```javascript
-function Flower(){
-    this.color = "red";
-    this.petals = 32;
-    this.smellsPretty= true;
-    this.sniff = function(){
-        console.log("Sniff Sniff Sniff!");
-    };
-    // Demonstrates use of arguments with methods
-    this.smellsGood = function(answer) {
-    	if (answer) {
-    		return 'This flower smells amazing!';
-    	} else {
-    		return 'What a noxious weed!';
-    	}
-    };
-    // Demonstrates use of local object variables
-    this.describe = function() {
-        alert("This flower is " + this.color + ".");    
-	}
-}
-```
-
-###Quick Challenge - She loves me, she loves me not...
-Create an object method for flower that will play the age old game ['He loves me, he loves me not...'](https://en.wikipedia.org/wiki/He_loves_me..._he_loves_me_not)
-- Count down from the petal number down to 1
-- Alternately display 'He loves me' or 'He loves me not' to the console for each petal count decrement.
-- Display the final phrase with an exclamation; that's the end of the game!
-
-
-There are many more aspects to objects that we will discover soon.  For now, play with objects and think up some great object examples that we might use in class.
-
-PS. Here is the Literal equivalent of the flower constructor with all of the methods intact:
-
-```javascript
-var flower = {
-    color: "red",
-    petals: 32,
-    smellsPretty: true,
-    sniff: function(){
-        console.log("Sniff Sniff Sniff!");
-    },
-    // Demonstrates use of arguments with methods
-    smellsGood: function(answer) {
-        if (answer) {
-            return 'This flower smells amazing!';
-        } else {
-            return 'What a noxious weed!';
-        }
-    },
-    // Demonstrates use of local object variables
-    describe: function(answer) {
-        alert("This flower is " + this.color + ".");    
-    }
-}
-```
-
-
-
-## Section Title
-
-<!-- framing on *how* the workshop will be conducted ("pair programming"/"think pair share"/"I do, you do, we do"/etc) -->
->***Note:*** *This can be a pair programming activity or done independently.*
-
-#### Non-section heading
-
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum fugiat autem voluptate officia voluptatum tempore repudiandae illum libero. Dolor aliquam minima sit velit, quis quisquam delectus explicabo nam id facilis.
-
-<!-- File path -->
-**/directory/file-name.js**
-
-```js
-// code here
-```
-
-###Illustration
-<figure>
-  <img src="http://www.computerhope.com/jargon/d/dom1.jpg" alt="DOM Tree">
-  <br>
-  <figcaption>Descriptive caption</figcaption>
-</figure>
-
-###Check for Understanding
-
-<details>
-  <summary>Thought provoking question</summary>
-  <p>Mind-blowing explanation</p>
-</details>
-
 ## Independent Practice
-Refine the skills covered in this workshop with this [lab](#)
+Refine the skills covered in this workshop with this [training](https://github.com/sf-wdi-31/js-objects-training).
 
 ## Closing Thoughts
-- review objectives & hierarchy of importance
-- look ahead & link to future workshops
-- clarify expectations and what developers should know by now
-- reiterate “the why” with a perspective of your intentions
-- create an active recall
-- Check for understanding
+- We're going to be using objects heavily this week in inspecting JSON. If accessing specific properties of an object is feeling challenging, practice in the terminal using node's REPL. Create an object and then try to access a specific property.
+- Take 2 minutes to write down everything you know about objects without looking at any other resources.
 
 ## Additional Resources
-- [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript)
-- [Tutsplus](http://code.tutsplus.com/tutorials/the-basics-of-object-oriented-javascript--net-7670)
+- [Eloquent JavaScript's Objects and Arrays chapter](http://eloquentjavascript.net/04_data.html)
+- [MDN's working with objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects)
+- [Examples of JSON](http://json.org/example.html)
