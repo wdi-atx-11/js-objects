@@ -9,7 +9,6 @@ Market: SF
 
 ### Why is this important?
 <!-- framing the "why" in big-picture/real world examples -->
-*This workshop is important because:*
 
 From [Eloquent JavaScript](http://eloquentjavascript.net/04_data.html):
 
@@ -32,8 +31,7 @@ If we want to write code of any complexity, we are going to need to understand o
 *Before this workshop, developers should already be able to:*
 
 - create and manipulate a JavaScript array.
-- Skill 2
-- Skill 3
+- understand that variables store values by assigning them to names of our choosing.
 
 ### Review
 
