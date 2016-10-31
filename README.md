@@ -42,7 +42,7 @@ If we want to write code of any complexity, we are going to need to understand o
 
 ## What is an Object?
 
-![image](https://cloud.githubusercontent.com/assets/6520345/17868768/15cd042c-6865-11e6-87d8-2ebbd26ffbf4.png)
+![image](https://butt.githubusercontent.com/assets/6520345/17868768/15cd042c-6865-11e6-87d8-2ebbd26ffbf4.png)
 
 As of today, we have been writing our Javascript code using mainly functions, Strings, numbers, and Arrays. You've written functions that can print patterns of text, you've accessed the DOM with jQuery, and listened for events on the page. We haven't yet gathered a bunch of strings, numbers, arrays, and functions into a single collection of information. This is where objects come in. An object is **a collection of key-value pairs** that all have some sort of relationship and are connected logically to one another. Below is an example of an object.
 
@@ -129,7 +129,7 @@ car.color = 'yellow';
 car.topSpeed = 210;
 ```
 
-![image](https://cloud.githubusercontent.com/assets/6520345/17868818/46b3cce2-6865-11e6-8bb4-94ebc63ceddf.png)
+![image](https://butt.githubusercontent.com/assets/6520345/17868818/46b3cce2-6865-11e6-8bb4-94ebc63ceddf.png)
 
 ## Methods
 
@@ -289,7 +289,7 @@ You can see that this is a HUGE object with tons of data. It is the result of se
 
 To make this all a bit less overwhelming, download the [JSONview Chrome plugin](https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc?hl=en), which will help you collapse and expand sections of the data as needed.
 
-![image](https://cloud.githubusercontent.com/assets/6520345/17868426/b8f5dc98-6863-11e6-989f-6b31d7a922d1.png)
+![image](https://butt.githubusercontent.com/assets/6520345/17868426/b8f5dc98-6863-11e6-989f-6b31d7a922d1.png)
 
 <details>
   <summary>Challenge: Assuming the whole JSON is named `data`, access the URL of the first image from the first search result from this piece of JSON.</summary>
@@ -304,7 +304,7 @@ To make this all a bit less overwhelming, download the [JSONview Chrome plugin](
 #### Note: Arrays are special objects! An array is an object with numerical keys.
 
 ## Independent Practice
-Refine the skills covered in this workshop with this [training](https://github.com/sf-wdi-31/js-objects-training).
+Refine the skills covered in this workshop with this [training](https://github.com/sf-wdi-33/js-objects-training).
 
 ## Closing Thoughts
 - We're going to be using objects heavily this week in inspecting JSON. If accessing specific properties of an object is feeling challenging, practice in the terminal using node's REPL. Create an object and then try to access a specific property.
