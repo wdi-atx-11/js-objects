@@ -191,13 +191,14 @@ Objects are all over JavaScript syntax. Look throughout the JavaScript code we'v
 
 Below is a truncated version of our cohort data. The `data` object is a grouping of key -value pairs that describe our class.  Take some time to study the structure and the data types within the data object. It's a bit more complex.
 
-```json
+```javascript
 var data = {
 	school: "General Assembly",
 	city: "Austin",
 	course: "Web Development Immersive",
 	course_id: "WDI11",
-	classroom: "3",
+	classroom: 3,
+	active: true,
 	students: [{
 		id: 124140,
 		lastName: "Summers",
