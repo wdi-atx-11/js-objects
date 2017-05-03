@@ -22,7 +22,7 @@ If we want to write code of any complexity, we are going to need to understand o
 
 - describe objects as collections of key value pairs.
 - demonstrate the ability to access any attribute of an object in two ways - `.` syntax and `[]` syntax
-- Display the difference between properties (attributes) and methods. Call an object's methods. Recognize the widespread presence of objects throughout JavaScript syntax (`console.log()`, `$('div').text()`, `string.length`)
+- Display the difference between properties (attributes) and methods. Call an object's methods. Recognize the widespread presence of objects throughout JavaScript syntax (`console.log()`, `fruits.reverse()`, `string.length`)
 - find and display an example of JSON on the web
 
 
@@ -42,9 +42,12 @@ If we want to write code of any complexity, we are going to need to understand o
 
 ## What is an Object?
 
+![Dane's Wandering Albatrose](http://ichef.bbci.co.uk/naturelibrary/images/ic/credit/640x395/w/wa/wandering_albatross/wandering_albatross_1.jpg)
+
+As of today, we have been writing our Javascript code using mainly functions, Strings, numbers, and Arrays. You've written functions that can print patterns of text, iterated over an array of fruits, and pluralized Albatrose birds. We haven't yet gathered a bunch of strings, numbers, arrays, and functions into a single collection of information. This is where objects come in. An object is **a collection of key-value pairs** that all have some sort of relationship and are connected logically to one another. Below is an example of an object.
+
 ![image](https://cloud.githubusercontent.com/assets/6520345/17868768/15cd042c-6865-11e6-87d8-2ebbd26ffbf4.png)
 
-As of today, we have been writing our Javascript code using mainly functions, Strings, numbers, and Arrays. You've written functions that can print patterns of text, you've accessed the DOM with jQuery, and listened for events on the page. We haven't yet gathered a bunch of strings, numbers, arrays, and functions into a single collection of information. This is where objects come in. An object is **a collection of key-value pairs** that all have some sort of relationship and are connected logically to one another. Below is an example of an object.
 
 ``` javascript
 // Literal Object Definition
@@ -188,28 +191,28 @@ Objects are all over JavaScript syntax. Look throughout the JavaScript code we'v
 
 Below is a truncated version of our cohort data. The `data` object is a grouping of key -value pairs that describe our class.  Take some time to study the structure and the data types within the data object. It's a bit more complex.
 
-```javascript
+```json
 var data = {
 	school: "General Assembly",
-	city: "San Francisco",
+	city: "Austin",
 	course: "Web Development Immersive",
-	course_id: "WDI31",
-	classroom: "4",
+	course_id: "WDI11",
+	classroom: "3",
 	students: [{
 		id: 124140,
-		lastName: "Baig",
-		firstName: "Abbas",
-		gitHubUsername: "abbasbaigali"
+		lastName: "Summers",
+		firstName: "James",
+		gitHubUsername: "SummerTime"
 	}, {
 		id: 421124,
-		lastName: "Bak",
-		firstName: "Sera",
-		gitHubUsername: "serabakpak"
+		lastName: "Spayde",
+		firstName: "Stefani",
+		gitHubUsername: "TheSpaydinator"
 	}, {
 		id: 824544,
-		lastName: "Brown",
-		firstName: "Alicia",
-		gitHubUsername: "cabrown91"
+		lastName: "Vo",
+		firstName: "Kenny",
+		gitHubUsername: "kennyVo83"
 	}]
 }
 
@@ -254,7 +257,7 @@ The `data.students` array is now accessible by using `studentArray` instead.
 
 
 <details>
-  <summary>How would you access Alicia's data from within the `data` object?</summary>
+  <summary>How would you access Kenny's data from within the `data` object?</summary>
   <p>
   ```javascript
     data.students[2]
@@ -263,7 +266,7 @@ The `data.students` array is now accessible by using `studentArray` instead.
 </details>
 
 <details>
-  <summary>How would you access Sera's GitHub username?</summary>
+  <summary>How would you access Stefani's GitHub username?</summary>
   <p>
   ```javascript
     data.students[1].gitHubUsername;
