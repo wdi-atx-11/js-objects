@@ -297,11 +297,11 @@ To make this all a bit less overwhelming, download the [JSONview Chrome plugin](
 
 <details>
   <summary>Challenge: Assuming the whole JSON is named `data`, access the URL of the first image from the first search result from this piece of JSON.</summary>
-  <p>
-  ```javascript
-    data.albums.items[0].images[0].url;
-  ```
-  </p>
+ 	<p>
+  	<pre>
+    	data.albums.items[0].images[0].url;
+  	</pre>
+ 	<p>
 </details>
 
 
