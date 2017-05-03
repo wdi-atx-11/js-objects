@@ -308,7 +308,7 @@ To make this all a bit less overwhelming, download the [JSONview Chrome plugin](
 #### Note: Arrays are special objects! An array is an object with numerical keys.
 
 ## Independent Practice
-Refine the skills covered in this workshop with this [training](https://github.com/sf-wdi-33/js-objects-training).
+Refine the skills covered in this workshop with this [training](https://github.com/wdi-atx-11/js-objects-training).
 
 ## Closing Thoughts
 - We're going to be using objects heavily this week in inspecting JSON. If accessing specific properties of an object is feeling challenging, practice in the terminal using node's REPL. Create an object and then try to access a specific property.
